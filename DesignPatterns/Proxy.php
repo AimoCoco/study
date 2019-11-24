@@ -153,7 +153,7 @@ class OrderServiceDynamicProxy
     }
 
     //执行增强目标方法
-    public function __invoke($method, ...$args)
+    public function __call($method, $args)
     {
         $argObj = $args[0];
         $this->beforeMethod($argObj);

@@ -29,7 +29,7 @@
  *      我们发现简单工厂是一个很好的解决方案，我们不需要知道创建那个具体运算对象，我们只需要传入我们需要的运算符即可。
  */
 
-//Operation运算类 (AbstractProduct)
+//Operation运算类 (抽象产品)
 class Operation
 {
     private $_numberA = 0; //私有,通过方法访问
@@ -63,7 +63,7 @@ class Operation
 
 }
 
-//加减乘除类 (ConcreteProduct)
+//加减乘除类 (具体产品)
 class OperationAdd extends Operation
 {
     public function getResult()
@@ -96,8 +96,7 @@ class OperationDiv extends Operation
     }
 }
 
-
-//简单运算工厂类 (Creator)
+//简单运算工厂类 (工厂类)
 class OperationFactory
 {
     public function createOperate($operate)
