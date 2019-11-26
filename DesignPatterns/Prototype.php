@@ -45,7 +45,7 @@ class TerrainFactory
     }
 
     function getSea() {
-        return clone $this->sea;  //浅复制！
+        return clone $this->sea;  //浅复制！注意每次返回的都是一个新的副本
     }
 
     function getPlains() {
