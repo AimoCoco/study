@@ -125,3 +125,31 @@ $operation = (new OperationFactory())->createOperate('/');
 $operation->setNumberA(100);
 $operation->setNumberB(2);
 echo $operation->getResult();
+
+//反射
+class FactoryBuilder
+{
+    public static function buildFactory($type) : BaseFactory
+    {
+        $className = __NAMESPACE__ . '\\' . self::getFactoryName($type).'Factory';
+        if (!class_exists($className)) {
+            $className = __NAMESPACE__ . '\\DefaultFactory';
+        }
+
+        try {
+            $rClass = new ReflectionClass($className);
+            $factory = $rClass->newInstanceWithoutConstructor();
+        } catch (ReflectionException $e) {
+            return new DefaultFactory;
+        }
+        /**
+         * @var BaseFactory $factory
+         */
+        return $factory;
+    }
+
+    protected static function getFactoryName($type)
+    {
+        return '';
+    }
+}

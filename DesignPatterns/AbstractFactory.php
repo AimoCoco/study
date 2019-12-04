@@ -31,6 +31,9 @@
 
 namespace AbstractFactory;
 //抽象汽车工厂类,需要生产发动机，轮胎，制动系统这3种零部件
+use ReflectionClass;
+use ReflectionException;
+
 abstract class CarFactory
 {
     //生产轮胎
@@ -145,3 +148,45 @@ $Q3Factory = new Q7Factory();
 $Q3Factory->createTire()->tire();
 $Q3Factory->createEngine()->engine();
 $Q3Factory->createBrake()->brake();
+
+//抽象工厂与简单工厂、反射的配合使用
+class ReflectionFactory extends CarFactory
+{
+    private $car = '';
+
+    public function __construct($car)
+    {
+        $this->car = $car; //可走配置文件
+    }
+
+    public function createTire() {
+        $className = __NAMESPACE__ . '\\' . $this->car . 'Tire';
+        try {
+            $class = new ReflectionClass($className);
+            $tire = $class->newInstance();
+        } catch (ReflectionException $Exception) {
+            throw new \InvalidArgumentException('暂不支持的类型');
+        }
+        return $tire;
+    }
+    public function createEngine() {
+        $className = __NAMESPACE__ . '\\' . $this->car . 'Engine';
+        try {
+            $class = new ReflectionClass($className);
+            $engine = $class->newInstance();
+        } catch (ReflectionException $Exception) {
+            throw new \InvalidArgumentException('暂不支持的类型');
+        }
+        return $engine;
+    }
+    public function createBrake() {
+        $className = __NAMESPACE__ . '\\' . $this->car . 'Brake';
+        try {
+            $class = new ReflectionClass($className);
+            $brake = $class->newInstance();
+        } catch (ReflectionException $Exception) {
+            throw new \InvalidArgumentException('暂不支持的类型');
+        }
+        return $brake;
+    }
+}
