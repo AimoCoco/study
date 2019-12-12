@@ -29,29 +29,31 @@
 
 namespace FactoryMethod;
 //Operation运算类 (抽象产品)
+/**
+ * Class Operation
+ * @package FactoryMethod
+ * @property int $numberA
+ * @property int $numberB
+ */
 class Operation
 {
-    private $_numberA = 0; //私有,通过方法访问
-    private $_numberB = 0;
+    private $numberA = 0; //私有,通过方法访问
+    private $numberB = 0;
 
-    public function getNumberA()
+    public function __get($property)
     {
-        return $this->_numberA;
+        if (isset($this->$property)) {
+            return $this->$property;
+        }
+        return null;
     }
 
-    public function setNumberA($numberA)
+    public function __set($property, $value)
     {
-        $this->_numberA = $numberA;
-    }
-
-    public function getNumberB()
-    {
-        return $this->_numberB;
-    }
-
-    public function setNumberB($numberB)
-    {
-        $this->_numberB = $numberB;
+        if (isset($this->$property)) {
+            $this->$property = $value;
+        }
+        return null;
     }
 
     public function getResult()
@@ -67,31 +69,31 @@ class OperationAdd extends Operation
 {
     public function getResult()
     {
-        return $this->getNumberA() + $this->getNumberB();
+        return $this->numberA + $this->numberB;
     }
 }
 class OperationSub extends Operation
 {
     public function getResult()
     {
-        return $this->getNumberA() - $this->getNumberB();
+        return $this->numberA - $this->numberB;
     }
 }
 class OperationMul extends Operation
 {
     public function getResult()
     {
-        return $this->getNumberA() * $this->getNumberB();
+        return $this->numberA * $this->numberB;
     }
 }
 class OperationDiv extends Operation
 {
     public function getResult()
     {
-        if ($this->getNumberB() == 0) {
+        if ($this->numberB == 0) {
             throw new Exception("除数不能为0");
         }
-        return $this->getNumberA() / $this->getNumberB();
+        return $this->numberA / $this->numberB;
     }
 }
 
@@ -120,6 +122,6 @@ class SubFactory implements IFactory
 //客户端
 $factory = new AddFactory();
 $operation = $factory->createOperate();
-$operation->setNumberA(100);
-$operation->setNumberB(2);
+$operation->numberA = 100;
+$operation->numberB = 2;
 echo $operation->getResult();
