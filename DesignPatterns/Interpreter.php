@@ -1,4 +1,6 @@
 <?php
+namespace Interpreter;
+class InterpreterPattern{};
 /**
  * 解释器模式（Interpreter）
  *
@@ -17,8 +19,6 @@
  *
  * 应用举例：可利用场景比较少，JAVA 中如果碰到可以用 expression4J 代替。
  */
-
-namespace Interpreter;
 
 abstract class AbstractExpression
 {

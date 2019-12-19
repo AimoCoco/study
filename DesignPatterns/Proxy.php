@@ -1,4 +1,6 @@
 <?php
+namespace Proxy;
+class ProxyPattern{};
 /**
  * 代理模式（Proxy）
  *

@@ -1,5 +1,6 @@
 <?php
-
+namespace Adapter;
+class AdapterPattern{};
 /**
  * 适配器模式（Adapter）
  *
@@ -36,7 +37,6 @@
 
 //例子：计算机读取TF卡（计算机本身可读取SD卡）
 
-namespace Adapter;
 //计算机读取SD卡：
 interface SDCard
 {

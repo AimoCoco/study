@@ -1,4 +1,6 @@
 <?php
+namespace Command;
+class CommandPattern{};
 /**
  * 命令模式（Command）
  *
@@ -26,8 +28,6 @@
  *      宏命令也是一个具体命令，不过它包含了对其他命令对象的引用，在调用宏命令的execute()方法时，将递归调用它所包含的每个成员命令的execute()方法，
  *      一个宏命令的成员对象可以是简单命令，还可以继续是宏命令。执行一个宏命令将执行多个具体命令，从而实现对命令的批处理。
  */
-
-namespace Command;
 
 abstract class Command
 {

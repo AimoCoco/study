@@ -1,4 +1,6 @@
 <?php
+namespace Mediator;
+class MediatorPattern{};
 /**
  * 中介者模式（Mediator）
  *
@@ -21,8 +23,6 @@
  *         2、机场调度系统。 3、MVC 框架，其中C（控制器）就是 M（模型）和 V（视图）的中介者。
  *         4、虚拟聊天室
  */
-
-namespace Mediator;
 
 abstract class Mediator
 {

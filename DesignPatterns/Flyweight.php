@@ -1,4 +1,6 @@
 <?php
+namespace Flyweight;
+class FlyweightPattern{};
 /**
  * 享元模式（Flyweight）
  *
@@ -45,8 +47,6 @@
  *         3、JAVA 中的 String，如果有则返回，如果没有则创建一个字符串保存在字符串缓存池里面。
  *         4、游戏开发中，围棋、五子棋、跳棋等他们都有大量的棋子对象，颜色是棋子的内部状态，位置是外部对象。
  */
-
-namespace Flyweight;
 
 abstract class Flyweight
 {

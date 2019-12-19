@@ -1,4 +1,6 @@
 <?php
+namespace Definition;
+class DefinitionPattern{};
 /**
  * 装饰模式（Decorator）
  *
@@ -34,7 +36,6 @@
  *      第二类是因为类定义不能继承（如final类）
  */
 
-namespace Definition;
 //Component类
 abstract class Component
 {

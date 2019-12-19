@@ -1,4 +1,6 @@
 <?php
+namespace Visitor;
+class VisitorPattern{};
 /**
  * 访问者模式（Visitor）
  *
@@ -19,8 +21,6 @@
  *
  * 模式举例：见最下方代码
  */
-
-namespace Visitor;
 
 //为该对象结构中ConcreteElement的每一个类声明一个Visit操作
 abstract class Visitor

@@ -1,4 +1,6 @@
 <?php
+namespace Prototype;
+class PrototypePattern{};
 /**
  * 原型模式（Prototype）
  *

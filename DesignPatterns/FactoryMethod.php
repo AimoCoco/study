@@ -1,4 +1,7 @@
 <?php
+namespace FactoryMethod;
+class FactoryMethodPattern{};
+
 /**
  * 工厂方法模式（又称为工厂模式，也叫虚拟构造器(Virtual Constructor)模式或者多态工厂(Polymorphic Factory)模式，它属于类创建型模式）
  *
@@ -27,7 +30,6 @@
  *      当只有一个具体工厂，在具体工厂中可以创建所有的产品对象，并且工厂方法设计为静态方法时，工厂方法模式就退化成简单工厂模式。
  */
 
-namespace FactoryMethod;
 //Operation运算类 (抽象产品)
 /**
  * Class Operation

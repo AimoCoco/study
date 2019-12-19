@@ -1,4 +1,6 @@
 <?php
+namespace Observer;
+class ObserverPattern{};
 /**
  * 观察者模式 (Observer)  又叫做发布-订阅（Publish/Subscribe）模式，是一种对象行为型模式。
  *
@@ -30,8 +32,6 @@
  *      一个委托可以搭载多个方法，所有方法被依次唤起。可以使得委托对象所搭载的方法并不需要属于同一个类。
  *
  */
-
-namespace Observer;
 
 //抽象通知类
 abstract class Subject

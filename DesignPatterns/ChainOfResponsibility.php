@@ -1,4 +1,6 @@
 <?php
+namespace Handler;
+class ChainOfResponsibility {};
 /**
  * 职责链模式（Chain Of Responsibility）
  *
@@ -24,8 +26,6 @@
  *         2、JS 中的事件冒泡。
  *         3、JAVA WEB 中 Apache Tomcat 对 Encoding 的处理，Struts2 的拦截器，jsp servlet 的 Filter。
  */
-
-namespace Handler;
 
 abstract class Handler
 {

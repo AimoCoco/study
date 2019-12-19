@@ -1,4 +1,6 @@
 <?php
+namespace Strategy;
+class StrategyPattern{};
 /**
  * 策略模式
  *

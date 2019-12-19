@@ -1,4 +1,6 @@
 <?php
+namespace IteratorMethod;
+class IteratorPattern{};
 /**
  * 迭代器模式（Iterator）
  *
@@ -20,7 +22,6 @@
  * 补充：高级编程语言C#、Java等本身已经把这个模式做在语言中了，
  *      PHP中是foreach，不需要知道集合对象是什么，就可以遍历所有的对象的循环工具。
  */
-namespace IteratorMethod;
 
 abstract Class Iterator
 {
