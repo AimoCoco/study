@@ -1,4 +1,6 @@
 <?php
+namespace AbstractFactory;
+class AbstractFactoryPattern{};
 /**
  * 抽象工厂模式（Abstract Factory）
  *
@@ -29,7 +31,6 @@
 
 //情景假设：假设现在有一个奥迪造车工厂，生产的车系有Q3,Q5,Q7三种不同型号但同属于Q系列的轿车，虽然同属于Q系列轿车，但三者车型的零部件差别还是很大。
 
-namespace AbstractFactory;
 //抽象汽车工厂类,需要生产发动机，轮胎，制动系统这3种零部件
 use ReflectionClass;
 use ReflectionException;

@@ -1,4 +1,6 @@
 <?php
+namespace TemplateMethod;
+class TemplateMethodPattern{};
 /**
  * 模板方法模式（Template Method）
  *

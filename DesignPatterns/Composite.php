@@ -1,4 +1,6 @@
 <?php
+namespace Composite;
+class CompositePattern{};
 /**
  * 组合模式（Composite）
  *
@@ -21,8 +23,6 @@
  * 应用举例：1、算术表达式包括操作数、操作符和另一个操作数，其中，另一个操作符也可以是操作数、操作符和另一个操作数。
  *         2、把基本控件组合成定制的控件：用两个文本框和一个按钮组合成登录控件。
  */
-
-namespace Composite;
 
 abstract class Component
 {

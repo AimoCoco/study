@@ -1,5 +1,6 @@
 <?php
-
+namespace State;
+class StatePattern{};
 /**
  * 状态模式（State），状态模式是一种对象行为型模式
  *
@@ -23,8 +24,6 @@
  * 适用环境：1、行为随状态改变而改变的场景。
  *          2、条件、分支语句的代替者。
  */
-
-namespace State;
 
 class Context
 {

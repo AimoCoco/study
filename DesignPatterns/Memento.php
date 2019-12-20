@@ -1,5 +1,6 @@
 <?php
-
+namespace Memento;
+class MementoPattern{};
 /**
  * 备忘录模式（Memento）
  *
@@ -22,7 +23,6 @@
  * 应用举例：1、后悔药。 2、打游戏时的存档。 3、Windows 里的 ctri + z。 4、IE 中的后退。 4、数据库的事务管理。
  */
 
-namespace Memento;
 /**
  * Class Originator
  * @property string $state

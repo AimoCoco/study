@@ -1,4 +1,6 @@
 <?php
+namespace Facade;
+class FacadePattern{};
 /**
  * 外观模式 (Facade Pattern) 外观模式又称为门面模式，它是一种对象结构型模式。
  *
