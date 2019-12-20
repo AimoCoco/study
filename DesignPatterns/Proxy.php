@@ -4,6 +4,10 @@ class ProxyPattern{};
 /**
  * 代理模式（Proxy）
  *
+ * 模式动机：在某些情况下，一个客户不想或者不能直接引用一个对 象，此时可以通过一个称之为“代理”的第三者来实现 间接引用。
+ * 代理对象可以在客户端和目标对象之间起到 中介的作用，并且可以通过代理对象去掉客户不能看到 的内容和服务或者添加客户需要的额外服务。
+ * 通过引入一个新的对象（如小图片和远程代理 对象）来实现对真实对象的操作或者将新的对 象作为真实对象的一个替身。
+ *
  * 含义：为其他对象提供一种代理以控制对这个对象的访问。（是一种对象结构型模式）
  *
  * 组成：Subject: 抽象主题角色，声明了真实主题和代理主题的共同接口
@@ -66,6 +70,21 @@ $proxy->Request();
 
 //实例 -> 模拟数据库的分库分表场景
 
+//IOrderMapper 模操作数据库的接口类
+interface IOrderMapper
+{
+    public function insert(Order $order);
+}
+//OrderMapperImpl 模操作数据库的接口实现类
+class OrderMapperImpl implements IOrderMapper
+{
+    public function insert(Order $order)
+    {
+        echo "添加Order成功";
+        return true;
+    }
+}
+
 //Order实例对象
 class Order
 {
@@ -87,21 +106,6 @@ class OrderServiceImpl implements IOrderService
         $this->orderMapper = new OrderMapperImpl();
         echo "Service调用mapper添加Order";
         $this->orderMapper->insert($order);
-    }
-}
-
-//IOrderMapper 模操作数据库的接口类
-interface IOrderMapper
-{
-    public function insert(Order $order);
-}
-//OrderMapperImpl 模操作数据库的接口实现类
-class OrderMapperImpl implements IOrderMapper
-{
-    public function insert(Order $order)
-    {
-        echo "添加Order成功";
-        return true;
     }
 }
 

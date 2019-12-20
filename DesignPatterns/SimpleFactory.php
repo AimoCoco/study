@@ -1,4 +1,9 @@
 <?php
+namespace SimpleFactory;
+use ReflectionClass;
+use ReflectionException;
+
+class SimpleFactoryPattern{};
 /**
  * 简单工厂模式(也叫静态工厂模式）
  *
@@ -140,11 +145,8 @@ class FactoryBuilder
             $rClass = new ReflectionClass($className);
             $factory = $rClass->newInstanceWithoutConstructor();
         } catch (ReflectionException $e) {
-            return new DefaultFactory;
+            return new DefaultFactory();
         }
-        /**
-         * @var BaseFactory $factory
-         */
         return $factory;
     }
 

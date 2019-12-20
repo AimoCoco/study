@@ -1,4 +1,6 @@
 <?php
+namespace Singleton;
+class SingletonPattern{};
 /**
  * 单例模式（Singleton）
  *
@@ -61,8 +63,6 @@
  * Java JDK1.5 起 这种实现方式还没有被广泛采用，但这是实现单例模式的最佳方法。它更简洁，自动支持序列化机制，绝对防止多次实例化。
  */
 
-namespace Singleton;
-
 class SingletonLazy
 {
     /** 静态成品变量 保存全局实例  */
@@ -95,7 +95,7 @@ $instance = SingletonLazy::getInstance();
 $instance->test();
 
 class SingletonNotLazy {
-    private static $_instance = new SingletonNotLazy();
+    private static $_instance = self::class;
     private function __construct ()
     {
     }

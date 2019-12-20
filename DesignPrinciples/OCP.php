@@ -1,4 +1,5 @@
 <?php
+class OCP{};
 /**
  * 开放-封闭原则（The Open-Closed Principle, OCP）
  *

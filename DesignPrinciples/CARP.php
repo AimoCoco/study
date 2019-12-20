@@ -1,4 +1,5 @@
 <?php
+class CARP{};
 /**
  * 合成/聚合复用原则（CARP）
  *
